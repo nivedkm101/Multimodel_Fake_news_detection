@@ -88,17 +88,17 @@ Database Management Module
 
 ## 📷 Screenshots
 
-Registration/Login	:Secure user access
+### Registration/Login	:Secure user access
 ![image](https://github.com/user-attachments/assets/28b8466c-cee7-4f88-9154-e96413ca81cf)
 ![image](https://github.com/user-attachments/assets/39f71ed0-50a7-4fa3-aac8-77a6b593763b)
 
-Home Page	:News submission portal
+### Home Page	:News submission portal
 ![image](https://github.com/user-attachments/assets/e8c4c10f-d441-43f9-8872-dd645e9afcc7)
 
-Feed Page	:View and evaluate posts
+### Feed Page	:View and evaluate posts
 ![image](https://github.com/user-attachments/assets/a580b55b-0a4c-4466-87dd-089267894c23)
 
-Prediction Results	:Fake or Real
+### Prediction Results	:Fake or Real
 ![image](https://github.com/user-attachments/assets/124f5499-1b88-45bd-96c6-1ee7e512e59d)
 
 
@@ -120,16 +120,16 @@ Key research papers and benchmark models used are cited in the full project repo
 bash
 Copy
 Edit
-# Clone the repository
+### Clone the repository
 git clone https://github.com/yourusername/fake-news-detection.git
 cd fake-news-detection
 
-# Create a virtual environment
+### Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate (Windows)
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Start the Flask app
+### Start the Flask app
 python app.py
