@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Detection Feed</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f0f4f8;
+        font-family: "Arial", sans-serif;
+      }
+      .navbar {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+      .navbar a {
+        color: white;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+      .card {
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        background-color: #ffffff;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        background-color: #2575fc;
+        color: white;
+        border-radius: 8px 8px 0 0;
+      }
+      .fake-news {
+        color: #e74c3c;
+        font-weight: bold;
+      }
+      .real-news {
+        color: #2ecc71;
+        font-weight: bold;
+      }
+      .post-content {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .post-footer {
+        font-size: 14px;
+        text-align: right;
+      }
+      .logout-btn {
+        background-color: #ff6f61;
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .logout-btn:hover {
+        background-color: #e94e40;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      h2 {
+        color: #333;
+      }
+      hr {
+        border-top: 2px solid #ddd;
+      }
+      .btn-primary {
+        background-color: #2575fc;
+        border-color: #2575fc;
+      }
+      .btn-primary:hover {
+        background-color: #6a11cb;
+        border-color: #6a11cb;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">Fake News Detection</a>
+      <div class="ml-auto">
+        <a href="/logout" class="logout-btn">Logout</a>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <!-- Add Feed Form -->
+      <h2 class="text-center">Add Feed</h2>
+      <form method="POST" enctype="multipart/form-data">
+        <textarea
+          name="content"
+          class="form-control"
+          rows="3"
+          placeholder="Enter text..."
+        ></textarea
+        ><br />
+        <input
+          type="file"
+          class="form-control"
+          name="image"
+          accept="image/*"
+        /><br />
+        <button type="submit" class="btn btn-primary mt-3">Post</button>
+      </form>
+
+      <!-- Prediction Result (if available) -->
+      {% if prediction %}
+      <hr />
+      <h3>Prediction Result:</h3>
+      {% if prediction.text %}
+      <p><strong>Text:</strong> {{ prediction.text }}</p>
+      {% endif %} {% if prediction.image %}
+      <p><strong>Image:</strong> {{ prediction.image }}</p>
+      <img
+        src="{{ url_for('static', filename='uploads/' ~ prediction.image_file) }}"
+        style="max-width: 300px"
+      />
+      {% endif %}
+      <p>
+        <strong>Overall:</strong>
+        {% if prediction.fake %}
+        <span class="fake-news">Fake</span>
+        {% else %}
+        <span class="real-news">Real</span>
+        {% endif %}
+      </p>
+      {% endif %}
+
+      <hr />
+      <h3>All Posts</h3>
+      {% for post in posts %}
+      <div class="card">
+        <div class="card-header">
+          <strong>{{ post['name'] }}</strong> ({{ post['email'] }})
+          <span class="badge bg-secondary">{{ post['trans'] }}</span>
+        </div>
+        <div class="card-body post-content">
+          {% if post['content'] %}
+          <p><strong>Text:</strong> {{ post['content'] }}</p>
+          {% endif %} {% if post['images'] %}
+          <img
+            src="{{ url_for('static', filename='uploads/' + post['images']) }}"
+            style="max-width: 300px"
+          />
+          {% endif %}
+        </div>
+        <div class="card-footer post-footer">
+          <strong>User Credibility:</strong> {{ post['credibility'] }}%
+          <br />
+          <strong>Status:</strong>
+          {% if post['fake'] %}
+          <span class="fake-news">Fake</span>
+          {% else %}
+          <span class="real-news">Real</span>
+          {% endif %}
+        </div>
+      </div>
+      {% else %}
+      <p>No posts yet.</p>
+      {% endfor %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
