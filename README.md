@@ -19,32 +19,32 @@ A robust and intelligent fake news detection platform integrating Natural Langua
 ## 📌 Project Objective
 To build a scalable, multimodal system capable of detecting fake news content using text and images, and to enhance digital accountability by assigning credibility scores to users based on the authenticity of their shared content.
 
-##🧱 System Architecture
-###🔤 Textual Analysis Pipeline
+## 🧱 System Architecture
+### 🔤 Textual Analysis Pipeline
 Preprocessing: Tokenization using bert-base-uncased
 
 Feature Extraction: BERT Embeddings
 
 Classification: BiLSTM Layer + Dense Layer
 
-###🖼️ Image Analysis Pipeline
+### 🖼️ Image Analysis Pipeline
 Preprocessing: Resizing and Normalization
 
 Model: CNN using ResNet-101
 
 Output: Binary Classification (Fake/Real)
 
-###🧾 Credibility Scoring System
+### 🧾 Credibility Scoring System
 Credibility = (No. of Real Posts / Total Posts) × 100
 
-###🖥️ Flask Web Application
+### 🖥️ Flask Web Application
 Frontend: HTML, CSS, JavaScript
 
 Backend: Python Flask
 
 Database: SQLite
 
-###📚 Datasets Used
+### 📚 Datasets Used
 📝 WELFake Dataset (Kaggle)
 Format: CSV
 
@@ -55,27 +55,27 @@ Format: Image folders (/Fake, /Real)
 
 Purpose: Train ResNet-101 for image classification
 
-##🧪 Experimental Setup
-###⚙️ Hardware
+## 🧪 Experimental Setup
+### ⚙️ Hardware
 Intel Core i5 10th Gen or above
 
 Minimum 4 GB RAM, 256 GB SSD
 
-###💻 Software
+### 💻 Software
 OS: Windows 10+
 
 Python 3.7+
 
 Libraries: TensorFlow, Keras, PyTorch, Flask, Scikit-learn
 
-##📊 Results
+## 📊 Results
 Model	Accuracy	Loss	F1 Score
 Text Model (BiLSTM + BERT)	High	Low	High
 Image Model (ResNet-101)	High	Low	High
 
 Confusion matrices and training plots confirm robust performance for both models. Combined analysis improves overall confidence and accuracy.
 
-##🔐 Modules Overview
+## 🔐 Modules Overview
 User Authentication Module
 
 Text & Image Prediction Modules
@@ -86,7 +86,7 @@ Credibility Scoring Module
 
 Database Management Module
 
-##📷 Screenshots
+## 📷 Screenshots
 
 Registration/Login	:Secure user access
 ![image](https://github.com/user-attachments/assets/28b8466c-cee7-4f88-9154-e96413ca81cf)
@@ -102,7 +102,7 @@ Prediction Results	:Fake or Real
 ![image](https://github.com/user-attachments/assets/124f5499-1b88-45bd-96c6-1ee7e512e59d)
 
 
-##💡 Future Enhancements
+## 💡 Future Enhancements
 🎥 Video Content Analysis
 
 🌍 Multilingual Text Processing
@@ -113,10 +113,10 @@ Prediction Results	:Fake or Real
 
 ☁️ Cloud Deployment for Scalability
 
-##📑 References
+## 📑 References
 Key research papers and benchmark models used are cited in the full project report. Includes works published in IEEE Access, Computational Social Systems, and Roboflow.
 
-##👩‍💻 How to Run Locally
+## 👩‍💻 How to Run Locally
 bash
 Copy
 Edit
