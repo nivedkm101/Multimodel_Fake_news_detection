@@ -1,7 +1,7 @@
-#📰 Multimodal Fake News Detection System
+# 📰 Multimodal Fake News Detection System
 A robust and intelligent fake news detection platform integrating Natural Language Processing and Computer Vision techniques. The system classifies news as real or fake using both text and image inputs and promotes responsible sharing through a user credibility scoring mechanism.
 
-##🚀 Features
+## 🚀 Features
 🔠 Text Analysis using BERT + BiLSTM
 
 🖼️ Image Analysis using ResNet-101
@@ -16,7 +16,7 @@ A robust and intelligent fake news detection platform integrating Natural Langua
 
 🌐 Flask-based Web Application with responsive UI
 
-##📌 Project Objective
+## 📌 Project Objective
 To build a scalable, multimodal system capable of detecting fake news content using text and images, and to enhance digital accountability by assigning credibility scores to users based on the authenticity of their shared content.
 
 ##🧱 System Architecture
