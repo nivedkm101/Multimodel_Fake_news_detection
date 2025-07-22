@@ -121,7 +121,7 @@ bash
 Copy
 Edit
 ### Clone the repository
-git clone https://github.com/yourusername/fake-news-detection.git
+git clone https://github.com/nivedkm101/Multimodel_Fake_news_detection.git
 cd fake-news-detection
 
 ### Create a virtual environment
