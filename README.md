@@ -116,20 +116,5 @@ Database Management Module
 ## 📑 References
 Key research papers and benchmark models used are cited in the full project report. Includes works published in IEEE Access, Computational Social Systems, and Roboflow.
 
-## 👩‍💻 How to Run Locally
-bash
-Copy
-Edit
-### Clone the repository
-git clone https://github.com/nivedkm101/Multimodel_Fake_news_detection.git
-cd fake-news-detection
-
-### Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate (Windows)
-
-### Install dependencies
-pip install -r requirements.txt
-
 ### Start the Flask app
 python app.py
